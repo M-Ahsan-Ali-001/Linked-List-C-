@@ -1,0 +1,62 @@
+#include <iostream>
+using  namespace std;
+
+class lnk {
+ public:
+	 int data;
+	 lnk * next;
+
+};
+
+class nodes {
+public:
+	lnk *head = NULL;
+
+	void ins(int data) {
+		lnk * node = new lnk;
+		node->data = data;
+		  node->next = NULL;
+		if (head == NULL) {
+			
+			head = node;
+
+
+		 }
+		  else {
+			node->next = head;
+
+			head = node;
+			
+		
+		  }
+	
+	
+	
+	}
+
+	void Traverse() {
+		lnk *temp = head;
+		 
+		while (temp != NULL) {
+		
+			cout << temp->data << "\n";
+			temp = temp->next;
+		
+		
+		}
+
+	}
+
+
+
+};
+
+int main() {
+
+	nodes obj;
+	obj.ins(33);
+       obj.ins(445);
+	obj.Traverse();
+	return 0;
+
+}
